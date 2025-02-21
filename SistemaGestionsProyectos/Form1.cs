@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaGestionsProyectos.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -38,6 +39,13 @@ namespace SistemaGestionsProyectos
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Empleado nuevaVentana = new Empleado();
+
+            nuevaVentana.Show();
         }
     }
 }
