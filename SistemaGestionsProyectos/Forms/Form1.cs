@@ -38,7 +38,13 @@ namespace SistemaGestionsProyectos
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Pruebas pruebas = new Pruebas();
 
+            this.Hide();
+
+            pruebas.ShowDialog();
+
+            this.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
