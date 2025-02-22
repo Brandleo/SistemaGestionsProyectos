@@ -18,7 +18,7 @@ namespace SistemaGestionsProyectos.DAO
         private static Conexion Con = null;
         private Conexion()
         {
-            this.Base = "sistemaInventario_Gestion";
+            this.Base = "GPRO";
             this.Servidor = "BRANDMACHINE";
             this.Usuario = "";
             this.Clave = "";
