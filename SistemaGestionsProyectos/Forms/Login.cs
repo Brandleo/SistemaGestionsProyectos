@@ -1,4 +1,8 @@
-﻿using System;
+﻿using SistemaGestionsProyectos.ClasesDao;
+using SistemaGestionsProyectos.DAO;
+using SistemaGestionsProyectos;
+using SistemaGestionsProyectos.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,15 +17,11 @@ namespace SistemaGestionsProyectos
     public partial class Login : Form
     {
 
-        public string contrasenia;
-        public string usuario;
-
-
-
 
         public Login()
         {
             InitializeComponent();
+
         }
 
         private void txtUsuario_TextChanged(object sender, EventArgs e)
@@ -31,16 +31,36 @@ namespace SistemaGestionsProyectos
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            string usuario = txtUsuario.Text;
-            // Validar el usuario si es necesario y luego abrir el panel de administrador
-            PanelAdmin adminPanel = new PanelAdmin(usuario);
-            this.Hide();
-            adminPanel.ShowDialog();
+            string usuario = txtUsuario.Text.Trim();
+            string contraseña = txtContra.Text.Trim();
 
-            this.Show();
 
-            txtContra.Text = " ";
-            txtUsuario.Text = " ";
+            try
+            {
+                Conexion conexion = Conexion.getInstancia();
+
+                UsuarioDao2 usuarioDao = new UsuarioDao2(conexion);
+
+                Usuario usuarios = usuarioDao.ValidarCredenciales(usuario, contraseña);
+
+                if (usuarios != null)
+                {
+                    MessageBox.Show("Inicio de sesión exitoso. Bienvenido " + usuarios.Correo);
+
+                    PanelAdmin panelAdmin = new PanelAdmin(usuarios.Correo); 
+                    panelAdmin.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Correo o contraseña incorrectos.");
+                    txtContra.Text = ""; 
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
         }
     }
 }

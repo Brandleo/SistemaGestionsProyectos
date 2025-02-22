@@ -35,39 +35,43 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(127, 80);
+            this.txtUsuario.Location = new System.Drawing.Point(135, 136);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUsuario.Multiline = true;
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(224, 57);
+            this.txtUsuario.Size = new System.Drawing.Size(297, 69);
             this.txtUsuario.TabIndex = 0;
             this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             // 
             // txtContra
             // 
-            this.txtContra.Location = new System.Drawing.Point(127, 181);
+            this.txtContra.Location = new System.Drawing.Point(135, 239);
+            this.txtContra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtContra.Multiline = true;
             this.txtContra.Name = "txtContra";
-            this.txtContra.Size = new System.Drawing.Size(224, 57);
+            this.txtContra.Size = new System.Drawing.Size(297, 69);
             this.txtContra.TabIndex = 1;
             // 
             // btnIngresar
             // 
-            this.btnIngresar.Location = new System.Drawing.Point(127, 282);
+            this.btnIngresar.Location = new System.Drawing.Point(134, 352);
+            this.btnIngresar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(224, 47);
+            this.btnIngresar.Size = new System.Drawing.Size(299, 58);
             this.btnIngresar.TabIndex = 2;
-            this.btnIngresar.Text = "button1";
+            this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = true;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(472, 589);
+            this.ClientSize = new System.Drawing.Size(601, 482);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.txtContra);
             this.Controls.Add(this.txtUsuario);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
