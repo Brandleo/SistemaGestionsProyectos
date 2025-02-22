@@ -46,8 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\Proyectos.cs" />
     <Compile Include="DAO\Conexion.cs" />
     <Compile Include="DAO\EmpleadoDAO.cs" />
+    <Compile Include="DAO\ProyectosDao.cs" />
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +68,13 @@
     <Compile Include="Forms\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Proyectos.cs" />
+    <Compile Include="Forms\Pruebas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pruebas.Designer.cs">
+      <DependentUpon>Pruebas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Form1.resx">
@@ -76,6 +85,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pruebas.resx">
+      <DependentUpon>Pruebas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
