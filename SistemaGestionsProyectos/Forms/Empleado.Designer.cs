@@ -39,6 +39,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.txtPuesto = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtDUI
@@ -71,7 +72,7 @@
             // 
             // txtHabilidades
             // 
-            this.txtHabilidades.Location = new System.Drawing.Point(436, 368);
+            this.txtHabilidades.Location = new System.Drawing.Point(436, 374);
             this.txtHabilidades.Name = "txtHabilidades";
             this.txtHabilidades.Size = new System.Drawing.Size(216, 31);
             this.txtHabilidades.TabIndex = 4;
@@ -124,7 +125,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(436, 433);
+            this.button1.Location = new System.Drawing.Point(451, 482);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(136, 64);
             this.button1.TabIndex = 10;
@@ -132,11 +133,19 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // txtPuesto
+            // 
+            this.txtPuesto.Location = new System.Drawing.Point(436, 431);
+            this.txtPuesto.Name = "txtPuesto";
+            this.txtPuesto.Size = new System.Drawing.Size(216, 31);
+            this.txtPuesto.TabIndex = 11;
+            // 
             // Empleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1638, 774);
+            this.Controls.Add(this.txtPuesto);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -168,5 +177,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtPuesto;
     }
 }

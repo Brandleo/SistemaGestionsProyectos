@@ -27,12 +27,12 @@ namespace SistemaGestionsProyectos.DAO
                 {
                     connection.Open();
 
-                    string query = "SELECT * FROM Usuarios WHERE Correo = @Correo AND Contraseña = @Contraseña";
+                    string query = "SELECT * FROM Usuarios WHERE Correo = @Correo AND Contrasenia = @Contrasenia";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@Correo", correo);
-                        command.Parameters.AddWithValue("@Contraseña", contraseña);
+                        command.Parameters.AddWithValue("@Contrasenia", contraseña);
 
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
