@@ -52,6 +52,18 @@
     <Compile Include="DAO\EmpleadoDAO.cs" />
     <Compile Include="DAO\ProyectosDao.cs" />
     <Compile Include="DAO\UsuarioDao2.cs" />
+    <Compile Include="Forms\AsignarPromotor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AsignarPromotor.Designer.cs">
+      <DependentUpon>AsignarPromotor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FichaEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FichaEmpleado.Designer.cs">
+      <DependentUpon>FichaEmpleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,8 +95,21 @@
     <Compile Include="Forms\Pruebas.Designer.cs">
       <DependentUpon>Pruebas.cs</DependentUpon>
     </Compile>
+    <Compile Include="DAO\UsuarioDAO.cs" />
+    <Compile Include="Forms\UsuariosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UsuariosForm.Designer.cs">
+      <DependentUpon>UsuariosForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\AsignarPromotor.resx">
+      <DependentUpon>AsignarPromotor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FichaEmpleado.resx">
+      <DependentUpon>FichaEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -99,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Pruebas.resx">
       <DependentUpon>Pruebas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UsuariosForm.resx">
+      <DependentUpon>UsuariosForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

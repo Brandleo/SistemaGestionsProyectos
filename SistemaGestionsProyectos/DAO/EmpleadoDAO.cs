@@ -10,7 +10,7 @@ namespace SistemaGestionsProyectos.DAO
 {
     internal class EmpleadoDAO
     {
-        public bool InsertarEmpleado(string dui, string nombre, string apellido, string direccion, string habilidades)
+        public bool InsertarEmpleado(string dui, string nombre, string apellido, string direccion, string habilidades, string puesto)
         {
             try
             {
@@ -26,6 +26,7 @@ namespace SistemaGestionsProyectos.DAO
                         cmd.Parameters.AddWithValue("@Apellido", apellido);
                         cmd.Parameters.AddWithValue("@Direccion", direccion);
                         cmd.Parameters.AddWithValue("@Habilidades", habilidades);
+                        cmd.Parameters.AddWithValue("@Puesto", puesto);
 
                         int filasAfectadas = cmd.ExecuteNonQuery();
 
@@ -45,5 +46,39 @@ namespace SistemaGestionsProyectos.DAO
                 throw new Exception("Error general: " + ex.Message);
             }
         }
-    }
+        public DataTable ObtenerEmpleados()
+        {
+            using (SqlConnection conexion = Conexion.getInstancia().CrearConexion())
+            {
+                conexion.Open();
+
+                using (SqlCommand cmd = new SqlCommand("SP_ObtenerEmpleados", conexion))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    return dt;
+                }
+            }
+        }
+
+        public DataTable ObtenerHistorialTareas(int empleadoId)
+        {
+            using (SqlConnection conexion = Conexion.getInstancia().CrearConexion())
+            {
+                conexion.Open();
+
+                using (SqlCommand cmd = new SqlCommand("SP_ObtenerHistorialTareas", conexion))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@EmpleadoId", empleadoId);
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    return dt;
+                }
+            }
+        }
+        }
 }
