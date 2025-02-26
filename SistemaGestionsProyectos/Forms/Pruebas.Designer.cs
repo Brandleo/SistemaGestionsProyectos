@@ -29,30 +29,40 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.menuProyectos = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.botonCrear = new System.Windows.Forms.Button();
+            this.dtpFechaFin = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtDenominacion = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNombreClave = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.dtgProyectos = new System.Windows.Forms.DataGridView();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnActualizar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.dtgProyectos = new System.Windows.Forms.DataGridView();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label10 = new System.Windows.Forms.Label();
+            this.dgtProyectos = new System.Windows.Forms.DataGridView();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnPromotor = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.menuProyectos.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgProyectos)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgtProyectos)).BeginInit();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -67,8 +77,9 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1157, 86);
+            this.panel1.Size = new System.Drawing.Size(864, 70);
             this.panel1.TabIndex = 1;
             // 
             // label1
@@ -76,9 +87,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(12, 32);
+            this.label1.Location = new System.Drawing.Point(9, 26);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(202, 35);
+            this.label1.Size = new System.Drawing.Size(162, 27);
             this.label1.TabIndex = 0;
             this.label1.Text = "PROYECTOS";
             // 
@@ -92,11 +104,12 @@
             this.menuProyectos.Controls.Add(this.tabPage3);
             this.menuProyectos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuProyectos.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.menuProyectos.Location = new System.Drawing.Point(0, 92);
+            this.menuProyectos.Location = new System.Drawing.Point(0, 75);
+            this.menuProyectos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.menuProyectos.Multiline = true;
             this.menuProyectos.Name = "menuProyectos";
             this.menuProyectos.SelectedIndex = 0;
-            this.menuProyectos.Size = new System.Drawing.Size(1157, 591);
+            this.menuProyectos.Size = new System.Drawing.Size(864, 562);
             this.menuProyectos.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.menuProyectos.TabIndex = 2;
             // 
@@ -105,174 +118,299 @@
             this.tabPage1.AccessibleName = "CREAR PROYECTOS";
             this.tabPage1.BackColor = System.Drawing.Color.LightYellow;
             this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Controls.Add(this.dateTimePicker2);
+            this.tabPage1.Controls.Add(this.botonCrear);
+            this.tabPage1.Controls.Add(this.dtpFechaFin);
             this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.dateTimePicker1);
+            this.tabPage1.Controls.Add(this.dtpFechaInicio);
             this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.textBox2);
+            this.tabPage1.Controls.Add(this.txtDenominacion);
             this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.txtNombreClave);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Location = new System.Drawing.Point(4, 26);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1149, 558);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Size = new System.Drawing.Size(856, 532);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "CREAR PROYECTOS";
             // 
-            // tabPage2
+            // botonCrear
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.LightYellow;
-            this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Controls.Add(this.textBox3);
-            this.tabPage2.Controls.Add(this.dtgProyectos);
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1149, 558);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "VER PROYECTOS";
+            this.botonCrear.BackColor = System.Drawing.Color.DodgerBlue;
+            this.botonCrear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.botonCrear.FlatAppearance.BorderSize = 0;
+            this.botonCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonCrear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonCrear.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.botonCrear.Location = new System.Drawing.Point(10, 249);
+            this.botonCrear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.botonCrear.Name = "botonCrear";
+            this.botonCrear.Size = new System.Drawing.Size(172, 43);
+            this.botonCrear.TabIndex = 28;
+            this.botonCrear.Text = "CREAR PROYECTO";
+            this.botonCrear.UseVisualStyleBackColor = false;
+            this.botonCrear.Click += new System.EventHandler(this.button1_Click);
             // 
-            // tabPage3
+            // dtpFechaFin
             // 
-            this.tabPage3.BackColor = System.Drawing.Color.LightYellow;
-            this.tabPage3.Location = new System.Drawing.Point(4, 29);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1149, 558);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "ASIGNAR PROMOTOR";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(14, 306);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(230, 53);
-            this.button1.TabIndex = 28;
-            this.button1.Text = "CREAR PROYECTO";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(471, 205);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(373, 27);
-            this.dateTimePicker2.TabIndex = 27;
+            this.dtpFechaFin.Location = new System.Drawing.Point(353, 167);
+            this.dtpFechaFin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpFechaFin.Name = "dtpFechaFin";
+            this.dtpFechaFin.Size = new System.Drawing.Size(281, 23);
+            this.dtpFechaFin.TabIndex = 27;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(468, 155);
+            this.label5.Location = new System.Drawing.Point(351, 126);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(149, 18);
+            this.label5.Size = new System.Drawing.Size(128, 15);
             this.label5.TabIndex = 26;
             this.label5.Text = "Fecha Finalización";
             // 
-            // dateTimePicker1
+            // dtpFechaInicio
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(14, 205);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(373, 27);
-            this.dateTimePicker1.TabIndex = 25;
+            this.dtpFechaInicio.Location = new System.Drawing.Point(10, 167);
+            this.dtpFechaInicio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpFechaInicio.Name = "dtpFechaInicio";
+            this.dtpFechaInicio.Size = new System.Drawing.Size(281, 23);
+            this.dtpFechaInicio.TabIndex = 25;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(11, 155);
+            this.label4.Location = new System.Drawing.Point(8, 126);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(99, 18);
+            this.label4.Size = new System.Drawing.Size(85, 15);
             this.label4.TabIndex = 24;
             this.label4.Text = "Fecha Inicio";
             // 
-            // textBox2
+            // txtDenominacion
             // 
-            this.textBox2.BackColor = System.Drawing.Color.White;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(471, 57);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(373, 41);
-            this.textBox2.TabIndex = 23;
+            this.txtDenominacion.BackColor = System.Drawing.Color.White;
+            this.txtDenominacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDenominacion.Location = new System.Drawing.Point(353, 46);
+            this.txtDenominacion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDenominacion.Multiline = true;
+            this.txtDenominacion.Name = "txtDenominacion";
+            this.txtDenominacion.Size = new System.Drawing.Size(280, 34);
+            this.txtDenominacion.TabIndex = 23;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(468, 25);
+            this.label3.Location = new System.Drawing.Point(351, 20);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(195, 18);
+            this.label3.Size = new System.Drawing.Size(167, 15);
             this.label3.TabIndex = 22;
             this.label3.Text = "Denominación comercial";
             // 
-            // textBox1
+            // txtNombreClave
             // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(14, 57);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(373, 41);
-            this.textBox1.TabIndex = 21;
+            this.txtNombreClave.BackColor = System.Drawing.Color.White;
+            this.txtNombreClave.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNombreClave.Location = new System.Drawing.Point(10, 46);
+            this.txtNombreClave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombreClave.Multiline = true;
+            this.txtNombreClave.Name = "txtNombreClave";
+            this.txtNombreClave.Size = new System.Drawing.Size(280, 34);
+            this.txtNombreClave.TabIndex = 21;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(11, 25);
+            this.label2.Location = new System.Drawing.Point(8, 20);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(233, 18);
+            this.label2.Size = new System.Drawing.Size(197, 15);
             this.label2.TabIndex = 20;
             this.label2.Text = "Nombre en clave del proyecto";
             // 
-            // dtgProyectos
+            // tabPage2
             // 
-            this.dtgProyectos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgProyectos.Location = new System.Drawing.Point(36, 141);
-            this.dtgProyectos.Name = "dtgProyectos";
-            this.dtgProyectos.RowHeadersWidth = 51;
-            this.dtgProyectos.RowTemplate.Height = 24;
-            this.dtgProyectos.Size = new System.Drawing.Size(1067, 348);
-            this.dtgProyectos.TabIndex = 0;
-            this.dtgProyectos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgProyectos_CellContentClick);
+            this.tabPage2.BackColor = System.Drawing.Color.LightYellow;
+            this.tabPage2.Controls.Add(this.btnActualizar);
+            this.tabPage2.Controls.Add(this.label6);
+            this.tabPage2.Controls.Add(this.textBox3);
+            this.tabPage2.Controls.Add(this.dtgProyectos);
+            this.tabPage2.Location = new System.Drawing.Point(4, 26);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Size = new System.Drawing.Size(848, 466);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "VER PROYECTOS";
             // 
-            // textBox3
+            // btnActualizar
             // 
-            this.textBox3.BackColor = System.Drawing.Color.White;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Location = new System.Drawing.Point(36, 73);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(373, 41);
-            this.textBox3.TabIndex = 22;
+            this.btnActualizar.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnActualizar.FlatAppearance.BorderSize = 0;
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnActualizar.Location = new System.Drawing.Point(655, 50);
+            this.btnActualizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(172, 43);
+            this.btnActualizar.TabIndex = 29;
+            this.btnActualizar.Text = "ACTUALIZAR";
+            this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(33, 40);
+            this.label6.Location = new System.Drawing.Point(25, 32);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(158, 18);
+            this.label6.Size = new System.Drawing.Size(133, 15);
             this.label6.TabIndex = 23;
             this.label6.Text = "Buscar por nombre:";
             // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.Color.White;
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox3.Location = new System.Drawing.Point(27, 59);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(280, 34);
+            this.textBox3.TabIndex = 22;
+            // 
+            // dtgProyectos
+            // 
+            this.dtgProyectos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgProyectos.Location = new System.Drawing.Point(27, 115);
+            this.dtgProyectos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgProyectos.Name = "dtgProyectos";
+            this.dtgProyectos.RowHeadersWidth = 51;
+            this.dtgProyectos.RowTemplate.Height = 24;
+            this.dtgProyectos.Size = new System.Drawing.Size(800, 283);
+            this.dtgProyectos.TabIndex = 0;
+            this.dtgProyectos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgProyectos_CellContentClick);
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.BackColor = System.Drawing.Color.LightYellow;
+            this.tabPage3.Controls.Add(this.btnPromotor);
+            this.tabPage3.Controls.Add(this.label10);
+            this.tabPage3.Controls.Add(this.dgtProyectos);
+            this.tabPage3.Controls.Add(this.textBox1);
+            this.tabPage3.Controls.Add(this.label8);
+            this.tabPage3.Location = new System.Drawing.Point(4, 26);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage3.Size = new System.Drawing.Size(856, 532);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "ASIGNAR PROMOTOR";
+            this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(20, 79);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(154, 15);
+            this.label10.TabIndex = 34;
+            this.label10.Text = "Proyectos sin promotor";
+            // 
+            // dgtProyectos
+            // 
+            this.dgtProyectos.BackgroundColor = System.Drawing.Color.LightYellow;
+            this.dgtProyectos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgtProyectos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightYellow;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgtProyectos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgtProyectos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightYellow;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgtProyectos.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgtProyectos.EnableHeadersVisualStyles = false;
+            this.dgtProyectos.GridColor = System.Drawing.Color.Orange;
+            this.dgtProyectos.Location = new System.Drawing.Point(22, 121);
+            this.dgtProyectos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgtProyectos.Name = "dgtProyectos";
+            this.dgtProyectos.RowHeadersWidth = 51;
+            this.dgtProyectos.RowTemplate.Height = 24;
+            this.dgtProyectos.Size = new System.Drawing.Size(781, 285);
+            this.dgtProyectos.StandardTab = true;
+            this.dgtProyectos.TabIndex = 26;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.White;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Location = new System.Drawing.Point(450, 78);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(222, 34);
+            this.textBox1.TabIndex = 25;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(423, 49);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(249, 15);
+            this.label8.TabIndex = 24;
+            this.label8.Text = "Buscar Proyecto por Nombre en Clave";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // btnPromotor
+            // 
+            this.btnPromotor.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnPromotor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPromotor.FlatAppearance.BorderSize = 0;
+            this.btnPromotor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPromotor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPromotor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnPromotor.Location = new System.Drawing.Point(23, 451);
+            this.btnPromotor.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPromotor.Name = "btnPromotor";
+            this.btnPromotor.Size = new System.Drawing.Size(224, 43);
+            this.btnPromotor.TabIndex = 35;
+            this.btnPromotor.Text = "Buscar Promotor";
+            this.btnPromotor.UseVisualStyleBackColor = false;
+            this.btnPromotor.Click += new System.EventHandler(this.btnPromotor_Click);
+            // 
             // Pruebas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DodgerBlue;
-            this.ClientSize = new System.Drawing.Size(1157, 679);
+            this.ClientSize = new System.Drawing.Size(864, 634);
             this.Controls.Add(this.menuProyectos);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Pruebas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pruebas";
@@ -284,6 +422,9 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgProyectos)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgtProyectos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -297,17 +438,23 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.Button botonCrear;
+        private System.Windows.Forms.DateTimePicker dtpFechaFin;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpFechaInicio;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtDenominacion;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNombreClave;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dtgProyectos;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DataGridView dgtProyectos;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btnPromotor;
     }
 }
