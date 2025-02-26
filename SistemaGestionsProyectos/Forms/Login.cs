@@ -34,11 +34,9 @@ namespace SistemaGestionsProyectos
             string usuario = txtUsuario.Text.Trim();
             string contraseña = txtContra.Text.Trim();
 
-
             try
             {
                 Conexion conexion = Conexion.getInstancia();
-
                 UsuarioDao2 usuarioDao = new UsuarioDao2(conexion);
 
                 Usuario usuarios = usuarioDao.ValidarCredenciales(usuario, contraseña);
@@ -47,14 +45,34 @@ namespace SistemaGestionsProyectos
                 {
                     MessageBox.Show("Inicio de sesión exitoso. Bienvenido " + usuarios.Correo);
 
-                    PanelAdmin panelAdmin = new PanelAdmin(usuarios.Correo); 
-                    panelAdmin.Show();
-                    this.Hide();
+                    this.Hide(); // Oculta el formulario de Login, pero no lo cierra
+
+                    Form panel;
+                    if (usuarios.RolId == 1)
+                    {
+                        panel = new PanelAdmin(usuarios.Correo);
+                    }
+                    else if (usuarios.RolId == 2)
+                    {
+                        panel = new Form2(usuarios.Correo);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Rol no reconocido. Contacte al administrador.");
+                        this.Show();
+                        return;
+                    }
+
+                    panel.ShowDialog();
+                    txtUsuario.Text = "";
+                    txtContra.Text = "";
+                    this.Show();
+
                 }
                 else
                 {
                     MessageBox.Show("Correo o contraseña incorrectos.");
-                    txtContra.Text = ""; 
+                    txtContra.Text = "";
                 }
             }
             catch (Exception ex)
@@ -62,5 +80,6 @@ namespace SistemaGestionsProyectos
                 MessageBox.Show($"Error: {ex.Message}");
             }
         }
+
     }
 }

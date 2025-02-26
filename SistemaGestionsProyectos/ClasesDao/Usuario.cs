@@ -11,27 +11,35 @@ namespace SistemaGestionsProyectos.ClasesDao
         private int id;
         private string correo;
         private string contraseña;
-        private bool estado;
+        private int estadoId;
         private int rolId;
+        private int empleado_id;
+        private int IntentosFallidos;
+        private DateTime BloqueadoHasta;
 
-        public Usuario()
+        public Usuario() 
         {
-
         }
 
-        public Usuario(int id, string correo, string contraseña, bool estado, int rolId)
+        public Usuario(int id, string correo, string contraseña, int estadoId, int rolId, int empleado_id, int intentosFallidos, DateTime bloqueadoHasta)
         {
             this.id = id;
             this.correo = correo;
             this.contraseña = contraseña;
-            this.estado = estado;
+            this.estadoId = estadoId;
             this.rolId = rolId;
+            this.empleado_id = empleado_id;
+            IntentosFallidos = intentosFallidos;
+            BloqueadoHasta = bloqueadoHasta;
         }
 
         public int Id { get => id; set => id = value; }
         public string Correo { get => correo; set => correo = value; }
         public string Contraseña { get => contraseña; set => contraseña = value; }
-        public bool Estado { get => estado; set => estado = value; }
+        public int EstadoId { get => estadoId; set => estadoId = value; }
         public int RolId { get => rolId; set => rolId = value; }
+        public int Empleado_id { get => empleado_id; set => empleado_id = value; }
+        public int IntentosFallidos1 { get => IntentosFallidos; set => IntentosFallidos = value; }
+        public DateTime BloqueadoHasta1 { get => BloqueadoHasta; set => BloqueadoHasta = value; }
     }
 }
