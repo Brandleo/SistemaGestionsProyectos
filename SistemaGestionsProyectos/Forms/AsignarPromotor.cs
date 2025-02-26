@@ -121,5 +121,10 @@ namespace SistemaGestionsProyectos.Forms
                 promotorDataTable.DefaultView.RowFilter = string.Format("DUI LIKE '%{0}%'", filtro);
             }
         }
+
+        private void dtgPromotores_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

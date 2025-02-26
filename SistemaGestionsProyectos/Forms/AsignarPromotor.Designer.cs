@@ -69,6 +69,7 @@
             this.dtgPromotores.RowTemplate.Height = 24;
             this.dtgPromotores.Size = new System.Drawing.Size(607, 324);
             this.dtgPromotores.TabIndex = 35;
+            this.dtgPromotores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgPromotores_CellContentClick);
             // 
             // label7
             // 
