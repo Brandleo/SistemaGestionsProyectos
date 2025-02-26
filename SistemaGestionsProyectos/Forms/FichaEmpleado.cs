@@ -19,13 +19,12 @@ namespace SistemaGestionsProyectos.Forms
         {
             InitializeComponent();
             dgvEmpleados.AllowUserToAddRows = false;
-            panel1.Width = 250; // Tamaño fijo para el panel cuando la ventana está normal
-                                // Ajusta la altura según tus necesidades
-           
+            this.Size = new Size(1000, 600); // Cambia los valores al tamaño deseado
+    
+            this.StartPosition = FormStartPosition.CenterScreen;
 
-            panel2.Width = 250;
-           
-            // Esto hará que el DataGridView ocupe todo el espacio dentro del GroupBox
+
+
 
 
 
@@ -35,7 +34,7 @@ namespace SistemaGestionsProyectos.Forms
         private void FichaEmpleado_Load(object sender, EventArgs e)
         {
             CargarListaEmpleados();
-           
+
         }
         private void CargarListaEmpleados()
         {
@@ -55,27 +54,6 @@ namespace SistemaGestionsProyectos.Forms
             {
                 (dgvEmpleados.DataSource as DataTable).DefaultView.RowFilter =
                     $"Nombre LIKE '%{filtro}%' OR Apellido LIKE '%{filtro}%' OR Puesto LIKE '%{filtro}%'";
-            }
-        }
-
-        private void dgvEmpleados_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow fila = dgvEmpleados.Rows[e.RowIndex];
-
-                txtNombre.Text = fila.Cells["Nombre"].Value.ToString();
-                txtApellido.Text = fila.Cells["Apellido"].Value.ToString();
-                txtCorreo.Text = fila.Cells["CorreoElectronico"].Value.ToString();
-                txtDUI.Text = fila.Cells["DUI"].Value.ToString();
-                txtPuesto.Text = fila.Cells["Puesto"].Value.ToString();
-                txtDireccion.Text = fila.Cells["Direccion"].Value.ToString();
-
-                int empleadoId = Convert.ToInt32(fila.Cells["Id"].Value);
-                CargarHistorialTareas(empleadoId);
-
-                // Confirm the action
-                MessageBox.Show("Empleado cargado correctamente.", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -114,19 +92,30 @@ namespace SistemaGestionsProyectos.Forms
         private void FichaEmpleado_Resize_1(object sender, EventArgs e)
         {
             // Cuando la ventana se maximiza, el Panel ocupa el tamaño máximo disponible
-            if (WindowState == FormWindowState.Maximized)
-            {
-                panel1.Width = this.ClientSize.Width; // Panel ocupa todo el ancho disponible
-            }
-            else
-            {
-                panel1.Width = 600; // Restaurar a tamaño original cuando la ventana no está maximizada
-            }
-            if (WindowState == FormWindowState.Maximized)
-            {
-                panel2.Width = this.ClientSize.Width; // Panel ocupa todo el ancho disponible
-            }
+         
            
+        }
+
+        private void dgvEmpleados_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow fila = dgvEmpleados.Rows[e.RowIndex];
+
+                txtNombre.Text = fila.Cells["Nombre"].Value.ToString();
+                txtApellido.Text = fila.Cells["Apellido"].Value.ToString();
+                txtCorreo.Text = fila.Cells["CorreoElectronico"].Value.ToString();
+                txtDUI.Text = fila.Cells["DUI"].Value.ToString();
+                txtPuesto.Text = fila.Cells["Puesto"].Value.ToString();
+                txtDireccion.Text = fila.Cells["Direccion"].Value.ToString();
+
+                int empleadoId = Convert.ToInt32(fila.Cells["Id"].Value);
+                CargarHistorialTareas(empleadoId);
+
+                // Confirm the action
+                MessageBox.Show("Empleado cargado correctamente.", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
         }
     }
 }

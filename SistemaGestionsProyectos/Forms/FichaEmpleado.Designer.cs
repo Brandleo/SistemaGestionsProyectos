@@ -46,13 +46,9 @@
             this.dgvHistorial = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
             this.dgvEmpleados = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtBuscar
@@ -210,11 +206,11 @@
             // dgvHistorial
             // 
             this.dgvHistorial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHistorial.Location = new System.Drawing.Point(3, 3);
+            this.dgvHistorial.Location = new System.Drawing.Point(850, 426);
             this.dgvHistorial.Name = "dgvHistorial";
             this.dgvHistorial.RowHeadersWidth = 82;
             this.dgvHistorial.RowTemplate.Height = 33;
-            this.dgvHistorial.Size = new System.Drawing.Size(873, 306);
+            this.dgvHistorial.Size = new System.Drawing.Size(797, 306);
             this.dgvHistorial.TabIndex = 4;
             // 
             // label7
@@ -229,44 +225,23 @@
             // 
             // dgvEmpleados
             // 
-            this.dgvEmpleados.AllowUserToOrderColumns = true;
             this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmpleados.Location = new System.Drawing.Point(3, 3);
+            this.dgvEmpleados.Location = new System.Drawing.Point(850, 49);
             this.dgvEmpleados.Name = "dgvEmpleados";
             this.dgvEmpleados.RowHeadersWidth = 82;
             this.dgvEmpleados.RowTemplate.Height = 33;
-            this.dgvEmpleados.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.dgvEmpleados.Size = new System.Drawing.Size(1313, 426);
-            this.dgvEmpleados.TabIndex = 1;
-            this.dgvEmpleados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellClick);
-            this.dgvEmpleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellContentClick);
-            this.dgvEmpleados.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvEmpleados_RowsAdded_1);
-            this.dgvEmpleados.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgvEmpleados_RowsRemoved);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.dgvEmpleados);
-            this.panel1.Location = new System.Drawing.Point(838, 49);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1650, 429);
-            this.panel1.TabIndex = 7;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.dgvHistorial);
-            this.panel2.Location = new System.Drawing.Point(838, 502);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(908, 447);
-            this.panel2.TabIndex = 8;
+            this.dgvEmpleados.Size = new System.Drawing.Size(992, 341);
+            this.dgvEmpleados.TabIndex = 0;
+            this.dgvEmpleados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellClick_1);
             // 
             // FichaEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightYellow;
-            this.ClientSize = new System.Drawing.Size(2181, 1529);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(1854, 928);
+            this.Controls.Add(this.dgvHistorial);
+            this.Controls.Add(this.dgvEmpleados);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnBuscar);
@@ -280,8 +255,6 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorial)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -307,7 +280,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dgvEmpleados;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
     }
 }
