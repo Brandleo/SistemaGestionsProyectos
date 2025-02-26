@@ -52,7 +52,7 @@ namespace SistemaGestionsProyectos.DAO
                     }
 
                     // Verificar credenciales
-                    string query = "SELECT Id, Correo, Contraseña, EstadoId, RolId, empleado_id FROM Usuarios WHERE Correo = @Correo AND Contraseña = @Contraseña";
+                    string query = "SELECT Id, Correo, Contrasenia, EstadoId, RolId, empleado_id FROM Usuarios WHERE Correo = @Correo AND Contrasenia = @Contrasenia";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@Correo", correo);
@@ -67,7 +67,7 @@ namespace SistemaGestionsProyectos.DAO
                                 {
                                     Id = reader.GetInt32(0),
                                     Correo = reader.GetString(1),
-                                    Contraseña = reader.GetString(2),
+                                    Contrasenia = reader.GetString(2),
                                     EstadoId = reader.GetInt32(3),
                                     RolId = reader.GetInt32(4),
                                     Empleado_id = reader.GetInt32(5),

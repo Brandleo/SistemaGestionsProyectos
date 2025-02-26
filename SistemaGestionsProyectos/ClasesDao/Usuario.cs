@@ -10,7 +10,7 @@ namespace SistemaGestionsProyectos.ClasesDao
     {
         private int id;
         private string correo;
-        private string contraseña;
+        private string contrasenia;
         private int estadoId;
         private int rolId;
         private int empleado_id;
@@ -21,11 +21,11 @@ namespace SistemaGestionsProyectos.ClasesDao
         {
         }
 
-        public Usuario(int id, string correo, string contraseña, int estadoId, int rolId, int empleado_id, int intentosFallidos, DateTime bloqueadoHasta)
+        public Usuario(int id, string correo, string contrasenia, int estadoId, int rolId, int empleado_id, int intentosFallidos, DateTime bloqueadoHasta)
         {
             this.id = id;
             this.correo = correo;
-            this.contraseña = contraseña;
+            this.contrasenia = contrasenia;
             this.estadoId = estadoId;
             this.rolId = rolId;
             this.empleado_id = empleado_id;
@@ -35,7 +35,7 @@ namespace SistemaGestionsProyectos.ClasesDao
 
         public int Id { get => id; set => id = value; }
         public string Correo { get => correo; set => correo = value; }
-        public string Contraseña { get => contraseña; set => contraseña = value; }
+        public string Contrasenia { get => contrasenia; set => contrasenia = value; }
         public int EstadoId { get => estadoId; set => estadoId = value; }
         public int RolId { get => rolId; set => rolId = value; }
         public int Empleado_id { get => empleado_id; set => empleado_id = value; }
