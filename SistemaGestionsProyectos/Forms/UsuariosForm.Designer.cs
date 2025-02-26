@@ -209,7 +209,7 @@
             this.botonCrear.Name = "botonCrear";
             this.botonCrear.Size = new System.Drawing.Size(172, 43);
             this.botonCrear.TabIndex = 28;
-            this.botonCrear.Text = "CREAR EMPLEADO";
+            this.botonCrear.Text = "CREAR USUARIO";
             this.botonCrear.UseVisualStyleBackColor = false;
             this.botonCrear.Click += new System.EventHandler(this.botonCrear_Click);
             // 
