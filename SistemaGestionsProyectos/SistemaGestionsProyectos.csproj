@@ -101,9 +101,6 @@
     <EmbeddedResource Include="Forms\AsignarPromotor.resx">
       <DependentUpon>AsignarPromotor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AsignarPromotor.resx">
-      <DependentUpon>AsignarPromotor.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FichaEmpleado.resx">
       <DependentUpon>FichaEmpleado.cs</DependentUpon>
     </EmbeddedResource>
