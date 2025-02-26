@@ -16,11 +16,18 @@ namespace SistemaGestionsProyectos.Forms
     {
 
         ProyectosDao proyectosDao;
-        
+
+
+
+        private DataTable proyectosDataTable;        
+        private DataTable proyectosSinPromDataTable;
+
         public Pruebas()
         {
             InitializeComponent();
             proyectosDao = new ProyectosDao();
+
+
             
             CargarProyectos();
            // CargarPromotores();
@@ -33,18 +40,43 @@ namespace SistemaGestionsProyectos.Forms
         }
 
 
+        /* public void CargarProyectos()
+         {
+             try
+             {
+                 DataTable proyectoData = proyectosDao.VerProyectos() ;
+
+                 if (proyectoData.Rows.Count > 0)
+                 {
+
+                     dtgProyectos.DataSource = proyectoData;
+
+
+                     dtgProyectos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                     dtgProyectos.Columns[0].Visible = false;
+                     dtgProyectos.Columns[5].HeaderText = "Promotor";
+                 }
+                 else
+                 {
+                     MessageBox.Show("No se encontraron datos de Proyectos.");
+                 }
+             }
+             catch (Exception ex)
+             {
+                 MessageBox.Show("Error: " + ex.Message);
+             }
+         }
+        */
+
         public void CargarProyectos()
         {
             try
             {
-                DataTable proyectoData = proyectosDao.VerProyectos() ;
+                proyectosDataTable = proyectosDao.VerProyectos();
 
-                if (proyectoData.Rows.Count > 0)
+                if (proyectosDataTable.Rows.Count > 0)
                 {
-                   
-                    dtgProyectos.DataSource = proyectoData;
-
-                    
+                    dtgProyectos.DataSource = proyectosDataTable;
                     dtgProyectos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                     dtgProyectos.Columns[0].Visible = false;
                     dtgProyectos.Columns[5].HeaderText = "Promotor";
@@ -60,6 +92,7 @@ namespace SistemaGestionsProyectos.Forms
             }
         }
 
+        /*
         public void CargarProyectosSinProm()
         {
             try
@@ -88,6 +121,35 @@ namespace SistemaGestionsProyectos.Forms
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+
+
+
+        */
+
+        public void CargarProyectosSinProm()
+        {
+            try
+            {
+                proyectosSinPromDataTable = proyectosDao.VerProyectosSinPromotor();
+
+                if (proyectosSinPromDataTable.Rows.Count > 0)
+                {
+                    dgtProyectos.DataSource = proyectosSinPromDataTable;
+                    dgtProyectos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    dgtProyectos.Columns[0].Visible = false;
+                    dgtProyectos.Columns[5].HeaderText = "Promotor";
+                }
+                else
+                {
+                    MessageBox.Show("No se encontraron datos de Proyectos.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
         private void dtgProyectos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -123,7 +185,19 @@ namespace SistemaGestionsProyectos.Forms
                     return;
                 }
 
-               
+
+                // Mostrar cuadro de confirmación antes de insertar el proyecto
+                DialogResult confirmacion = MessageBox.Show("¿Está seguro de que desea crear este proyecto?",
+                                                              "Confirmación",
+                                                              MessageBoxButtons.YesNo,
+                                                              MessageBoxIcon.Question);
+                if (confirmacion == DialogResult.No)
+                {
+                    return;
+                }
+
+
+
                 int resultado = proyectosDao.InsertProyecto(nombreClave, denominacion, fechaInicio, fechaFin);
 
                 if (resultado > 0)
@@ -188,8 +262,22 @@ namespace SistemaGestionsProyectos.Forms
             }
         }
 
+        private void txtBuscarPornombre_TextChanged(object sender, EventArgs e)
+        {
+            if (proyectosDataTable != null)
+            {
+                string filtro = txtBuscarPornombre.Text.Trim().Replace("'", "''");
+                proyectosDataTable.DefaultView.RowFilter = string.Format("NombreClave LIKE '%{0}%'", filtro);
+            }
+        }
 
-
-
+        private void txtBuscarProyectoSinProm_TextChanged(object sender, EventArgs e)
+        {
+            if (proyectosSinPromDataTable != null)
+            {
+                string filtro = txtBuscarProyectoSinProm.Text.Trim().Replace("'", "''");
+                proyectosSinPromDataTable.DefaultView.RowFilter = string.Format("NombreClave LIKE '%{0}%'", filtro);
+            }
+        }
     }
 }

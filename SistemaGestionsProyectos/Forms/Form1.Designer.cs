@@ -30,12 +30,12 @@
         {
             this.labelUsuario = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnProyectos = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -63,6 +63,17 @@
             this.panel1.Size = new System.Drawing.Size(246, 675);
             this.panel1.TabIndex = 1;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(37, 591);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(167, 50);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Cerrar Sesion";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -87,6 +98,7 @@
             this.button4.TabIndex = 3;
             this.button4.Text = "FICHA EMPLEADOS";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -110,6 +122,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "CREAR USUARIOS";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnProyectos
             // 
@@ -123,17 +136,6 @@
             this.btnProyectos.UseVisualStyleBackColor = true;
             this.btnProyectos.Click += new System.EventHandler(this.button1_Click);
             this.btnProyectos.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button1_MouseMove);
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(37, 591);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(167, 50);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Cerrar Sesion";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // PanelAdmin
             // 

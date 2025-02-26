@@ -58,5 +58,24 @@ namespace SistemaGestionsProyectos
         {
             this.Close();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            UsuariosForm usuarios = new UsuariosForm();
+
+            this.Hide();
+
+            usuarios.ShowDialog();
+
+            this.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            FichaEmpleado fichaEmpleado = new FichaEmpleado();
+            this.Hide();
+            fichaEmpleado.ShowDialog();
+            this.Show();
+        }
     }
 }

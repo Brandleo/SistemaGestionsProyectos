@@ -32,7 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtBuscarCorreo = new System.Windows.Forms.TextBox();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.txtDui = new System.Windows.Forms.TextBox();
@@ -88,7 +88,7 @@
             // 
             this.tabPage2.BackColor = System.Drawing.Color.LightYellow;
             this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Controls.Add(this.textBox3);
+            this.tabPage2.Controls.Add(this.txtBuscarCorreo);
             this.tabPage2.Controls.Add(this.dgvUsuarios);
             this.tabPage2.Location = new System.Drawing.Point(4, 26);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
@@ -105,20 +105,21 @@
             this.label6.Location = new System.Drawing.Point(25, 32);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(133, 15);
+            this.label6.Size = new System.Drawing.Size(125, 15);
             this.label6.TabIndex = 23;
-            this.label6.Text = "Buscar por nombre:";
+            this.label6.Text = "Buscar por correo:";
             // 
-            // textBox3
+            // txtBuscarCorreo
             // 
-            this.textBox3.BackColor = System.Drawing.Color.White;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Location = new System.Drawing.Point(27, 59);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(280, 34);
-            this.textBox3.TabIndex = 22;
+            this.txtBuscarCorreo.BackColor = System.Drawing.Color.White;
+            this.txtBuscarCorreo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBuscarCorreo.Location = new System.Drawing.Point(27, 59);
+            this.txtBuscarCorreo.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBuscarCorreo.Multiline = true;
+            this.txtBuscarCorreo.Name = "txtBuscarCorreo";
+            this.txtBuscarCorreo.Size = new System.Drawing.Size(280, 34);
+            this.txtBuscarCorreo.TabIndex = 22;
+            this.txtBuscarCorreo.TextChanged += new System.EventHandler(this.txtBuscarCorreo_TextChanged);
             // 
             // dgvUsuarios
             // 
@@ -130,6 +131,7 @@
             this.dgvUsuarios.RowTemplate.Height = 24;
             this.dgvUsuarios.Size = new System.Drawing.Size(800, 283);
             this.dgvUsuarios.TabIndex = 0;
+            this.dgvUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellContentClick);
             // 
             // tabPage1
             // 
@@ -352,9 +354,9 @@
             this.label7.Location = new System.Drawing.Point(20, 31);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(159, 15);
+            this.label7.Size = new System.Drawing.Size(79, 15);
             this.label7.TabIndex = 39;
-            this.label7.Text = "Promotores disponibles";
+            this.label7.Text = "Empleados";
             // 
             // UsuariosForm
             // 
@@ -365,6 +367,7 @@
             this.Controls.Add(this.menuProyectos);
             this.Controls.Add(this.panel1);
             this.Name = "UsuariosForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UsuariosForm";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -387,7 +390,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtBuscarCorreo;
         private System.Windows.Forms.DataGridView dgvUsuarios;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Button botonCrear;

@@ -17,6 +17,7 @@ namespace SistemaGestionsProyectos.Forms
         UsuarioDAO usuarioDAO;
         ProyectosDao pro;
         private DataTable promotorDataTable;
+        private DataTable usuariosDataTable;
         public UsuariosForm()
         {
             InitializeComponent();
@@ -150,21 +151,46 @@ namespace SistemaGestionsProyectos.Forms
 
 
 
+        /* public void CargarUsuarios()
+         {
+             try
+             {
+                 DataTable usuariosData = usuarioDAO.ObtenerUsuarios();
+
+                 if (usuariosData.Rows.Count > 0)
+                 {
+
+                     dgvUsuarios.DataSource = usuariosData;
+
+
+                     dgvUsuarios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                   //  dgvUsuarios.Columns[0].Visible = false;
+                     //dgvUsuarios.Columns[5].HeaderText = "Promotor";
+                 }
+                 else
+                 {
+                     MessageBox.Show("No se encontraron datos de Usuarios.");
+                 }
+             }
+             catch (Exception ex)
+             {
+                 MessageBox.Show("Error: " + ex.Message);
+             }
+         }
+        */
+
+
         public void CargarUsuarios()
         {
             try
             {
-                DataTable usuariosData = usuarioDAO.ObtenerUsuarios();
+                usuariosDataTable = usuarioDAO.ObtenerUsuarios();
 
-                if (usuariosData.Rows.Count > 0)
+                if (usuariosDataTable.Rows.Count > 0)
                 {
-
-                    dgvUsuarios.DataSource = usuariosData;
-
-
+                    dgvUsuarios.DataSource = usuariosDataTable;
                     dgvUsuarios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                  //  dgvUsuarios.Columns[0].Visible = false;
-                    //dgvUsuarios.Columns[5].HeaderText = "Promotor";
+                    // Opcional: Oculta alguna columna o renombra encabezados si es necesario.
                 }
                 else
                 {
@@ -176,6 +202,11 @@ namespace SistemaGestionsProyectos.Forms
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+
+
+
+
+
 
         public void CargarEmpleados()
         {
@@ -221,6 +252,21 @@ namespace SistemaGestionsProyectos.Forms
             {
                 string filtro = txtBuscarDUI.Text.Trim().Replace("'", "''");
                 promotorDataTable.DefaultView.RowFilter = string.Format("DUI LIKE '%{0}%'", filtro);
+            }
+        }
+
+        private void dgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtBuscarCorreo_TextChanged(object sender, EventArgs e)
+        {
+            if (usuariosDataTable != null)
+            {
+                string filtro = txtBuscarCorreo.Text.Trim().Replace("'", "''");
+                // Aplica el filtro sobre la columna "Correo"
+                usuariosDataTable.DefaultView.RowFilter = string.Format("Correo LIKE '%{0}%'", filtro);
             }
         }
     }
