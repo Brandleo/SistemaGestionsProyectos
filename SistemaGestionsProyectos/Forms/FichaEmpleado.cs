@@ -19,7 +19,18 @@ namespace SistemaGestionsProyectos.Forms
         {
             InitializeComponent();
             dgvEmpleados.AllowUserToAddRows = false;
+            panel1.Width = 250; // Tamaño fijo para el panel cuando la ventana está normal
+                                // Ajusta la altura según tus necesidades
+           
+
+            panel2.Width = 250;
+           
+            // Esto hará que el DataGridView ocupe todo el espacio dentro del GroupBox
+
+
+
         }
+
 
         private void FichaEmpleado_Load(object sender, EventArgs e)
         {
@@ -92,6 +103,29 @@ namespace SistemaGestionsProyectos.Forms
 
         private void dgvEmpleados_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
+           
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FichaEmpleado_Resize_1(object sender, EventArgs e)
+        {
+            // Cuando la ventana se maximiza, el Panel ocupa el tamaño máximo disponible
+            if (WindowState == FormWindowState.Maximized)
+            {
+                panel1.Width = this.ClientSize.Width; // Panel ocupa todo el ancho disponible
+            }
+            else
+            {
+                panel1.Width = 600; // Restaurar a tamaño original cuando la ventana no está maximizada
+            }
+            if (WindowState == FormWindowState.Maximized)
+            {
+                panel2.Width = this.ClientSize.Width; // Panel ocupa todo el ancho disponible
+            }
            
         }
     }
